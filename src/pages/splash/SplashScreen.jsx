@@ -46,7 +46,7 @@ const SplashScreen = () => {
   return (
     <div className='relative'>
       <motion.div variants={splashAnimation} initial="visible" animate={showSplash ? "visible" : "hidden"} className={`bg-black w-screen h-screen flex justify-center items-center absolute top-0 left-0 z-10 ${showSplash?"":"hidden"}`}>
-        <motion.div variants={logoAnimation} animate="visible" exit="hidden" initial="hidden" transition={{ type: "spring", }}>
+        <motion.div variants={logoAnimation} animate="visible" exit="hidden" initial="hidden" transition={{ type: "spring" }}>
           <img src={assets.brandlogo} />
         </motion.div>
       </motion.div>
