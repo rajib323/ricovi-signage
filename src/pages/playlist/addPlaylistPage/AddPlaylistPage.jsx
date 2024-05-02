@@ -1,21 +1,24 @@
 import { useCallback, useState } from 'react'
-import BreadCrumb from '../../components/breadCrumb/BreadCrumb';
+import BreadCrumb from '../../../components/breadCrumb/BreadCrumb';
 import { useDropzone } from 'react-dropzone';
-import AddContentFile from '../../components/addContentItem/AddContentFile';
+import AddContentFile from '../../../components/addContentItem/AddContentFile';
+import PrimaryButton from '../../../components/button/PrimaryButton';
+import OutlineButton from '../../../components/button/OutlineButton';
 
-const AddContentPage = () => {
+
+const AddPlaylistPage = () => {
   const [files, setFiles] = useState([])
   const onDrop = useCallback(acceptedFiles => {
-    const currentFiles=files;
+    const currentFiles = files;
     currentFiles.push(acceptedFiles[0])
     setFiles(currentFiles);
   }, [])
 
-  const removeFile=(file)=>{
-    const currentFiles=files;
-    const currentFileIndex=currentFiles.findIndex(item=>item===file);
-    currentFiles.splice(currentFileIndex,1);
-    
+  const removeFile = (file) => {
+    const currentFiles = files;
+    const currentFileIndex = currentFiles.findIndex(item => item === file);
+    currentFiles.splice(currentFileIndex, 1);
+
     setFiles(currentFiles);
   }
 
@@ -40,7 +43,7 @@ const AddContentPage = () => {
           {
 
             files && files.map(
-              (item,index) => <AddContentFile key={index} item={item} removeFile={removeFile}/>)
+              (item, index) => <AddContentFile key={index} item={item} removeFile={removeFile} />)
           }
           <div {...getRootProps()} className='flex-shrink-0 w-full max-w-[330px] h-[185px]'>
             <input {...getInputProps()} />
@@ -53,6 +56,16 @@ const AddContentPage = () => {
                 </div>
             }
           </div>
+
+
+        </div>
+        <div className='justify-end my-4 gap-4 flex'>
+          <OutlineButton linkPage={"/playlist"}>
+            Cancel
+          </OutlineButton>
+          <PrimaryButton>
+            Save
+          </PrimaryButton>
         </div>
       </form>
 
@@ -63,4 +76,4 @@ const AddContentPage = () => {
   )
 }
 
-export default AddContentPage
+export default AddPlaylistPage

@@ -1,10 +1,11 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
-const OutlineButton = ({triggerFunction,children}) => {
+const OutlineButton = ({triggerFunction,children,linkPage}) => {
   return (
-    <div className='flex flex-shrink-0 cursor-pointer px-5 py-2 gap-2 items-center max-w-40 w-full rounded-md bg-white'>
+    <Link to={linkPage} onClick={triggerFunction} className='flex px-5 flex-shrink-0 cursor-pointer border py-2 text-neutral-800 text-md gap-2 rounded-md items-center'>
       {children}
-    </div>
+    </Link>
   )
 }
 

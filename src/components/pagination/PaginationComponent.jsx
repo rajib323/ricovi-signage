@@ -17,14 +17,14 @@ const PaginationComponent = ({ currentPage, totalPage }) => {
             </Link>
             {
                 Array
-                    .from({ length: 5 })
+                    .from({ length: totalPage })
                     .map(
                         (item, index) =>
                             <Link
                                 onClick={() => setcurrentPageNo(`${index + 1}`)}
                                 to={location.pathname + `?page=${index + 1}`}
                                 key={index}
-                                className={`inline p-2 ${currentPageNo === (index + 1).toString() ? "bg-primaryOrangeAccent" : "text-primaryOrangeAccent"} rounded-md`}>
+                                className={`inline p-2 px-4 ${currentPageNo === (index + 1).toString() ? "bg-primaryOrangeAccent" : "text-primaryOrangeAccent"} rounded-md`}>
                                 {index + 1}
                             </Link>)
             }

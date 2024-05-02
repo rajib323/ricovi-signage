@@ -3,11 +3,11 @@ import { RiDeleteBinLine } from "react-icons/ri";
 import assets from '../../assets';
 
 
-const ContentItem = ({ imgURL, title, fileType }) => {
+const ContentItem = ({ imgURL, title, fileType,onDeleteClicked }) => {
     return (
         <div className='rounded-lg bg-white max-w-[280px] md:max-w-[350px]'>
             <div className='relative z-0'>
-                <RiDeleteBinLine className='cursor-pointer absolute top-4 right-4 bg-white/60 p-2 box-content rounded-lg' />
+                <RiDeleteBinLine onClick={onDeleteClicked} className='cursor-pointer absolute top-4 right-4 bg-white/60 p-2 box-content rounded-lg' />
                 <img src={imgURL} alt="card-image" className='w-full object-cover ' />
             </div>
             <div className='p-4 flex text-sm font-medium'>

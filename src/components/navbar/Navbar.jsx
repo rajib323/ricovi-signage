@@ -10,7 +10,7 @@ const Navbar = ({toggleMenu}) => {
   
 
   return (
-    <div className='flex justify-between h-20 px-5 md:px-10 py-5'>
+    <div className='flex justify-between h-[70px] px-5 md:px-10 py-5'>
       <div className='flex gap-2 items-center justify-end '>
         <HiMenuAlt1 onClick={toggleMenu}  className='text-2xl md:hidden cursor-pointer'/>
         <img src={assets.brand} alt="logo" className='w-28' />

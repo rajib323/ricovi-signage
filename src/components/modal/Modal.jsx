@@ -1,7 +1,6 @@
 import React from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { AiOutlineClose } from "react-icons/ai";
-import assets from '../../assets/kitchenManager/index'
 
 const overlayAnimator={
     visible: { opacity: 1 },
@@ -22,7 +21,7 @@ const modalAnimator={
     },
 }
 
-const Modal = ({ showModal, closeModal, children, title,titleClass="text-2xl font-bold py-4",modalClass="max-w-[400px]"}) => {
+const Modal = ({ showModal, closeModal, children}) => {
     
     const overlayClicked=(e)=>{
         if(e.target.id==='overlay'||e.target.id==="closeButton"){
@@ -44,14 +43,9 @@ const Modal = ({ showModal, closeModal, children, title,titleClass="text-2xl fon
                     exit="hidden"
                 >
                     <motion.div
-                        className={`w-full bg-white p-5 rounded-2.5xl ${modalClass}`}
+                        className={`w-fit bg-white p-5 px-10 rounded-[10px] flex flex-col justify-center items-center `}
                         variants={modalAnimator}
                     >
-                        <div className='flex items-center'>
-                            <h3 className={titleClass}>{title}</h3>
-                            <AiOutlineClose id='closeButton' onClick={overlayClicked} className='ms-auto cursor-pointer text-xl border box-content p-2 rounded-md' />
-                        </div>
-
                         {children}
                     </motion.div>
                 </motion.div>

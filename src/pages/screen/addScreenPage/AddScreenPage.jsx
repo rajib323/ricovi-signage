@@ -1,7 +1,6 @@
 import React from 'react'
-import BreadCrumb from '../../components/breadCrumb/BreadCrumb'
-import PrimaryButton from '../../components/button/PrimaryButton'
-import OutlineButton from '../../components/button/OutlineButton'
+import BreadCrumb from '../../../components/breadCrumb/BreadCrumb'
+import PrimaryButton from '../../../components/button/PrimaryButton'
 
 
 const AddScreenPage = () => {
@@ -29,10 +28,6 @@ const AddScreenPage = () => {
             <p className='w-fit'>Cancel</p>
           </div>
         </form>
-  
-  
-  
-  
       </div>
   )
 }
